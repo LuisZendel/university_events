@@ -19,7 +19,14 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 El proyecto tiene como proposito mostrar los eventos correspondientes a un instituto universitario. 
 Mostrando las un catalgo de los mismos.
 
+## Como usar 
+Una vez que descargo la carpeta eh intalo las dependencias puede acceder a la pagina con el link http://localhost:3000 dentro de su navegador de preferemcia. 
+Tambien debera descargar la api del repositorio event_service levantar el servicio con las intrucciones en el repositorio.
 
+- Enotrara la pagina inicial un pequño resumen de la pagina junto con el listado de eventos disponibles 
+- Si selecciona la opción de configurar la barra de navegación le solicitara iniciar sesion 
+- usurio: Luis password: 1234
+- Editar base de datos
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -13,23 +13,23 @@ export default function DeleteEvent() {
       .then((event) => setEvent(event));
   }, []);
 
-  const borrarEvent = (id,index) => {
+  const borrarEvent = (id, index) => {
     fetch("http://localhost:3001/api/event/data/delete", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({"id": id}),
-      }).then((res) => {
-        console.log(res);
-        if (res.status == 200 || res.status == 201) {
-          alert("El evento fue eliminado");
-        }
-      });
-      var aux = [...event]
-      aux.splice(index,1)
-      setEvent(aux)
-  }
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: id }),
+    }).then((res) => {
+      console.log(res);
+      if (res.status == 200 || res.status == 201) {
+        alert("El evento fue eliminado");
+      }
+    });
+    var aux = [...event];
+    aux.splice(index, 1);
+    setEvent(aux);
+  };
   return (
     <div className=" h-screen bg-white">
       <Navbar />
@@ -63,8 +63,14 @@ export default function DeleteEvent() {
             {event.map((e, index) => {
               return (
                 <div key={e.id}>
-                    <button className="w-32 bg-red-400 p-2 rounded-md"
-                    onClick={()=>{borrarEvent(e.idEvento, index)}}>Eliminar {e.idEvento}</button>
+                  <button
+                    className="w-64 bg-red-400 p-2 rounded-md"
+                    onClick={() => {
+                      borrarEvent(e.idEvento, index);
+                    }}
+                  >
+                    Eliminar {e.nombre}
+                  </button>
                   <EventComponent
                     nombre={e.nombre}
                     fecha={e.fechaInicio}

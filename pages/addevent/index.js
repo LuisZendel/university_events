@@ -10,7 +10,7 @@ export default function AddEvent() {
     fechaFin: "",
     observaciones: "",
   });
-  const [sesion, setSesion] = useState(true);
+  const [sesion, setSesion] = useState(false);
   useEffect(() => {}, []);
   const handleEvent = (e, id) => {
     if (id == 1) {
