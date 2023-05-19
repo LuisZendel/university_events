@@ -26,7 +26,7 @@ export default function SesionComponent({ sesion, setSesion }) {
   }
   return (
     <div className="flex justify-center items-center mt-10">
-      <div class="w-1/2 ">
+      <div class="w-96 ">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full">
           <div class="mb-4">
             <label

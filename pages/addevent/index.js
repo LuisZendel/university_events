@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SesionComponent from "@/components/SesionComponent";
-
+import Navbar from "@/components/Navbar";
+import Link from "next/link";
 export default function AddEvent() {
   const [event, setEvent] = useState({
     nombre: "",
@@ -65,13 +66,35 @@ export default function AddEvent() {
     }
   };
   return (
-    <div className="bg-gradient-to-r from-sky-500 to-indigo-500 h-screen p-5">
-      <div className="flex justify-center items-center text-xl text-white font-bold text-2xl">
+    <div className=" h-screen bg-white">
+      <Navbar />
+      <div className="flex justify-center items-center text-xl text-2xl p-20">
         Eventos Universitarios
       </div>
       {sesion ? (
-        <div className="flex justify-center items-center mt-10">
-          <div class="w-1/2 ">
+        <div className="flex w-full mt-10">
+          <div className="p-10 border border-2 mx-2 w-80 flex-col ">
+            <span className="flex justify-center items-cener"> OPCIONES</span>
+            <Link
+              class="bg-sky-800  hover:bg-sky-500  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block my-2 w-48 mx-auto"
+              href={""}
+            >
+              Crear evento
+            </Link>
+            <Link
+              class="bg-sky-800  hover:bg-sky-500  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block my-2 w-48 mx-auto"
+              href={"/deleteevent"}
+            >
+              Eliminar evento
+            </Link>
+            <Link
+              class="bg-sky-800  hover:bg-sky-500  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block my-2 w-48 mx-auto"
+              href={"/"}
+            >
+              Actualizar evento
+            </Link>
+          </div>
+          <div class="w-1/2 mx-auto ">
             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full">
               <div class="mb-4">
                 <label
@@ -144,7 +167,7 @@ export default function AddEvent() {
 
               <div class="flex items-center justify-between">
                 <button
-                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  class="bg-sky-800  hover:bg-sky-500  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
                   onClick={() => {
                     validEvent();

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import EventComponent from "@/components/EventComponent";
 import { useEffect, useState } from "react";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [event, setEvent] = useState([])
@@ -10,7 +11,9 @@ export default function Home() {
     .then(event=> setEvent(event) )
   },[])
   return (
-    <div className="bg-white h-screen p-5">
+    <div className="bg-white h-full ">
+      <Navbar/>
+      <div className="py-20">
       <div className="flex justify-center items-center text-xl">
         Eventos Universitarios
       </div>
@@ -46,6 +49,7 @@ export default function Home() {
           descripcion={"Evento de la orquesta "}
         />
       </div>
+    </div>
     </div>
   );
 }
